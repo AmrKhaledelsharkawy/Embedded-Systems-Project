@@ -1,4 +1,4 @@
-## Project Name: Dual Microcontroller Communication Project
+## Project Name: Embedded-Systems-Project
 
 ### Project Description
 
