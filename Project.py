@@ -716,10 +716,11 @@ variable_to_display = 2  # Initial value for available spots
 #Comunication Pins 
 comm_send_pin = Pin(21, Pin.OUT)
 comm_recv_pin = Pin(22, Pin.IN, Pin.PULL_DOWN)
+comm_conf4_pin = Pin(15,  Pin.IN,Pin.PULL_DOWN)
 comm_conf2_pin = Pin(13, Pin.IN, Pin.PULL_DOWN)
+
 comm_conf_pin = Pin(27,  Pin.OUT)
 comm_conf3_pin = Pin(16,  Pin.OUT)
-comm_conf4_pin = Pin(15,  Pin.IN,Pin.PULL_DOWN)
 
 
 #Button
@@ -1438,6 +1439,15 @@ def start_server():
 def main():
     while True:
         card_print()
+def read_rfid():
+    rfid_reader.init()
+    (card_status, tag_type) = rfid_reader.request(rfid_reader.REQIDL)
+    if card_status == rfid_reader.OK:
+        (card_status, card_id) = rfid_reader.SelectTagSN()
+        card_id = tuple(card_id)  # Convert list to tuple for lookup
+        if card_status == rfid_reader.OK:
+            return card_id
+    return None
+
 
 start_server()
-

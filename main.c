@@ -34,10 +34,11 @@
 #define PWM_FREQ 50   // PWM frequency in Hz
 #define COMM_SEND_PIN 22  // GPIO pin for sending signals to the slave
 #define COMM_RECV_PIN 21  // GPIO pin for receiving signals from the slave
-#define COMM_CONF_PIN 26  // GPIO pin for receiving signals from the slave
-#define COMM_CONF2_PIN 17  // GPIO pin for receiving signals from the slave
-#define COMM_CONF3_PIN 14  // GPIO pin for receiving signals from the slave
 #define COMM_CONF4_PIN 28 // GPIO pin for receiving signals from the slave
+#define COMM_CONF2_PIN 17  // GPIO pin for receiving signals from the slave
+
+#define COMM_CONF_PIN 26  // GPIO pin for receiving signals from the slave
+#define COMM_CONF3_PIN 14  // GPIO pin for receiving signals from the slave
 
 #define Test 16
 
